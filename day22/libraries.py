@@ -1,0 +1,51 @@
+"""
+Copy and paste your code from Day 18.
+
+We are going to make a change to this project:
+
+Make the number generator completely random between 1 and 1,000,000. \
+Now, the game will always have the user guess a random number each time (now the user can't cheat...)
+
+Totally Random One-Million-to-One
+What is your guess?: 500000
+Too low
+What is your guess?: 750000
+Too high
+What is your guess?: 600000
+Too low
+What is your guess?: 650000
+Correct!
+It took you 4 guesses to get the number correct.
+Click 'run' to try again with a different number.
+"""
+
+
+### Solution  ###
+
+print("Welcome to Guess the Number.🥳🥳🥳")
+print()
+print("Guess a number between 1 and 1,000,000 and I will tell you if you are too low, too high, or get it correct.")
+print()
+print("Let's play!")
+
+import random
+attempt = 1
+myNumber = random.randint(1,1000000)
+
+while True: 
+  user_guess = int(input("Pick a number between 1 and 1,000,000: "))
+  if user_guess < myNumber:
+    print("That number is too low. Try again!")
+    attempt += 1
+  elif user_guess > myNumber:
+    print("That number is too high. Try again!")
+    attempt += 1
+    continue
+  elif user_guess == myNumber:
+    print("You are a winner! 🥳🥳")
+    break 
+    exit()
+  else:
+    print("That is not a number I recognize.")
+print("It took you", attempt, "attempt(s) to get the correct answer.")
+print ("Thanks for patricipation.")
